@@ -12,9 +12,9 @@ public class Main
 		Options opt = new OptionsBuilder()
 			.include(ReflectionFX.class.getName())
 			.warmupIterations(3)
-			.warmupBatchSize(1000000)
+			.warmupBatchSize(100000000)
 			.measurementIterations(10)
-			.measurementBatchSize(1000000)
+			.measurementBatchSize(100000000)
 			.mode(Mode.AverageTime)
 			.forks(1)
 			.build();

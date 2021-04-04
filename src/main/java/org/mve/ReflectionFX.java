@@ -17,37 +17,44 @@ public class ReflectionFX
 	private static final BindSite SITE;
 
 	@Benchmark
-	public void testMethod() throws Throwable
+	public void testmethod() throws Throwable
 	{
 		METHOD.invoke(Test.class, 1, 2);
 	}
 
 	@Benchmark
-	public void testMethodHandle() throws Throwable
+	public void testmethodHandle() throws Throwable
 	{
-		HANDLE.invoke(1, 2);
+		String result = (String) HANDLE.invokeExact(1, (double)2);
 	}
 
 	@Benchmark
-	public void testReflectionAccessor()
+	public void testreflectionAccessor()
 	{
 		ACCESSOR.invoke(1, 2);
 	}
 
 	@Benchmark
-	public void testDynamicBinding()
+	public void testdynamicBinding()
 	{
 		SITE.a(1, 2);
 	}
 
+	@Benchmark
+	public void testinvoke()
+	{
+		Test.a(1, 2);
+	}
+
 	static
 	{
+
 		try
 		{
 			METHOD = Test.class.getDeclaredMethod("a", int.class, double.class);
 			METHOD.setAccessible(true);
 			HANDLE = ReflectionFactory.TRUSTED_LOOKUP.findStatic(Test.class, "a", MethodType.methodType(String.class, int.class, double.class));
-			ACCESSOR = ReflectionFactory.getReflectionAccessor(Test.class, "a", true, false, false, String.class, int.class, double.class);
+			ACCESSOR = ReflectionFactory.access(Test.class, "a", MethodType.methodType(String.class, int.class, double.class), ReflectionFactory.KIND_INVOKE_STATIC);
 			SITE = new ReflectionFactory(BindSite.class, Test.class)
 				.method(
 					new MethodKind("a", String.class, int.class, double.class),
