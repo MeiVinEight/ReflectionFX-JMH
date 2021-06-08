@@ -1,6 +1,7 @@
 package org.mve;
 
 import org.mve.invoke.MethodKind;
+import org.mve.invoke.PolymorphismFactory;
 import org.mve.invoke.ReflectionAccessor;
 import org.mve.invoke.ReflectionFactory;
 import org.openjdk.jmh.annotations.Benchmark;
@@ -55,8 +56,9 @@ public class ReflectionFX
 			METHOD.setAccessible(true);
 			HANDLE = ReflectionFactory.TRUSTED_LOOKUP.findStatic(Test.class, "a", MethodType.methodType(String.class, int.class, double.class));
 			ACCESSOR = ReflectionFactory.access(Test.class, "a", MethodType.methodType(String.class, int.class, double.class), ReflectionFactory.KIND_INVOKE_STATIC);
-			SITE = new ReflectionFactory(BindSite.class, Test.class)
+			SITE = new PolymorphismFactory<>(BindSite.class)
 				.method(
+					Test.class,
 					new MethodKind("a", String.class, int.class, double.class),
 					new MethodKind("a", String.class, int.class, double.class),
 					ReflectionFactory.KIND_INVOKE_STATIC
