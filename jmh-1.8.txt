@@ -1,0 +1,189 @@
+# JMH version: 1.37
+# VM version: JDK 1.8.0_461, Java HotSpot(TM) 64-Bit Server VM, 25.461-b11
+# VM invoker: W:\Workspace\Java\OracleJDK\8\jre\bin\java.exe
+# VM options: -javaagent:F:\IDE\Intellij IDEA\lib\idea_rt.jar=63667 -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each, 1000 calls per op
+# Measurement: 10 iterations, 1 s each, 1000 calls per op
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.mve.ReflectionFX.testdynamicBinding
+
+# Run progress: 0.00% complete, ETA 00:01:05
+# Fork: 1 of 1
+# Warmup Iteration   1: 250.936 ns/op
+# Warmup Iteration   2: 235.971 ns/op
+# Warmup Iteration   3: 234.510 ns/op
+Iteration   1: 243.030 ns/op
+Iteration   2: 239.090 ns/op
+Iteration   3: 235.421 ns/op
+Iteration   4: 236.233 ns/op
+Iteration   5: 235.049 ns/op
+Iteration   6: 237.718 ns/op
+Iteration   7: 248.967 ns/op
+Iteration   8: 243.345 ns/op
+Iteration   9: 242.920 ns/op
+Iteration  10: 238.346 ns/op
+
+
+Result "org.mve.ReflectionFX.testdynamicBinding":
+  240.012 ±(99.9%) 6.719 ns/op [Average]
+  (min, avg, max) = (235.049, 240.012, 248.967), stdev = 4.444
+  CI (99.9%): [233.293, 246.731] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 1.8.0_461, Java HotSpot(TM) 64-Bit Server VM, 25.461-b11
+# VM invoker: W:\Workspace\Java\OracleJDK\8\jre\bin\java.exe
+# VM options: -javaagent:F:\IDE\Intellij IDEA\lib\idea_rt.jar=63667 -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each, 1000 calls per op
+# Measurement: 10 iterations, 1 s each, 1000 calls per op
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.mve.ReflectionFX.testinvoke
+
+# Run progress: 20.00% complete, ETA 00:00:58
+# Fork: 1 of 1
+# Warmup Iteration   1: 241.659 ns/op
+# Warmup Iteration   2: 237.893 ns/op
+# Warmup Iteration   3: 237.498 ns/op
+Iteration   1: 238.269 ns/op
+Iteration   2: 241.462 ns/op
+Iteration   3: 238.425 ns/op
+Iteration   4: 240.648 ns/op
+Iteration   5: 251.767 ns/op
+Iteration   6: 274.516 ns/op
+Iteration   7: 338.340 ns/op
+Iteration   8: 254.583 ns/op
+Iteration   9: 263.264 ns/op
+Iteration  10: 240.794 ns/op
+
+
+Result "org.mve.ReflectionFX.testinvoke":
+  258.207 ±(99.9%) 46.321 ns/op [Average]
+  (min, avg, max) = (238.269, 258.207, 338.340), stdev = 30.638
+  CI (99.9%): [211.886, 304.527] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 1.8.0_461, Java HotSpot(TM) 64-Bit Server VM, 25.461-b11
+# VM invoker: W:\Workspace\Java\OracleJDK\8\jre\bin\java.exe
+# VM options: -javaagent:F:\IDE\Intellij IDEA\lib\idea_rt.jar=63667 -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each, 1000 calls per op
+# Measurement: 10 iterations, 1 s each, 1000 calls per op
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.mve.ReflectionFX.testmethod
+
+# Run progress: 40.00% complete, ETA 00:00:43
+# Fork: 1 of 1
+# Warmup Iteration   1: 1440.459 ns/op
+# Warmup Iteration   2: 8326.874 ns/op
+# Warmup Iteration   3: 6243.031 ns/op
+Iteration   1: 5557.184 ns/op
+Iteration   2: 5505.075 ns/op
+Iteration   3: 5477.863 ns/op
+Iteration   4: 5653.134 ns/op
+Iteration   5: 5510.923 ns/op
+Iteration   6: 5596.800 ns/op
+Iteration   7: 5571.974 ns/op
+Iteration   8: 5518.688 ns/op
+Iteration   9: 5547.318 ns/op
+Iteration  10: 5520.324 ns/op
+
+
+Result "org.mve.ReflectionFX.testmethod":
+  5545.928 ±(99.9%) 77.767 ns/op [Average]
+  (min, avg, max) = (5477.863, 5545.928, 5653.134), stdev = 51.438
+  CI (99.9%): [5468.161, 5623.695] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 1.8.0_461, Java HotSpot(TM) 64-Bit Server VM, 25.461-b11
+# VM invoker: W:\Workspace\Java\OracleJDK\8\jre\bin\java.exe
+# VM options: -javaagent:F:\IDE\Intellij IDEA\lib\idea_rt.jar=63667 -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each, 1000 calls per op
+# Measurement: 10 iterations, 1 s each, 1000 calls per op
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.mve.ReflectionFX.testmethodHandle
+
+# Run progress: 60.00% complete, ETA 00:00:28
+# Fork: 1 of 1
+# Warmup Iteration   1: 245.048 ns/op
+# Warmup Iteration   2: 247.465 ns/op
+# Warmup Iteration   3: 242.100 ns/op
+Iteration   1: 236.838 ns/op
+Iteration   2: 239.793 ns/op
+Iteration   3: 250.680 ns/op
+Iteration   4: 300.217 ns/op
+Iteration   5: 242.035 ns/op
+Iteration   6: 237.611 ns/op
+Iteration   7: 240.162 ns/op
+Iteration   8: 235.231 ns/op
+Iteration   9: 239.757 ns/op
+Iteration  10: 234.197 ns/op
+
+
+Result "org.mve.ReflectionFX.testmethodHandle":
+  245.652 ±(99.9%) 29.802 ns/op [Average]
+  (min, avg, max) = (234.197, 245.652, 300.217), stdev = 19.712
+  CI (99.9%): [215.851, 275.454] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 1.8.0_461, Java HotSpot(TM) 64-Bit Server VM, 25.461-b11
+# VM invoker: W:\Workspace\Java\OracleJDK\8\jre\bin\java.exe
+# VM options: -javaagent:F:\IDE\Intellij IDEA\lib\idea_rt.jar=63667 -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each, 1000 calls per op
+# Measurement: 10 iterations, 1 s each, 1000 calls per op
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.mve.ReflectionFX.testreflectionAccessor
+
+# Run progress: 80.00% complete, ETA 00:00:14
+# Fork: 1 of 1
+# Warmup Iteration   1: 12771.522 ns/op
+# Warmup Iteration   2: 12269.892 ns/op
+# Warmup Iteration   3: 8385.918 ns/op
+Iteration   1: 11054.366 ns/op
+Iteration   2: 8447.485 ns/op
+Iteration   3: 8481.611 ns/op
+Iteration   4: 9952.008 ns/op
+Iteration   5: 10710.014 ns/op
+Iteration   6: 8479.610 ns/op
+Iteration   7: 8246.325 ns/op
+Iteration   8: 8417.363 ns/op
+Iteration   9: 8758.892 ns/op
+Iteration  10: 8486.320 ns/op
+
+
+Result "org.mve.ReflectionFX.testreflectionAccessor":
+  9103.399 ±(99.9%) 1595.093 ns/op [Average]
+  (min, avg, max) = (8246.325, 9103.399, 11054.366), stdev = 1055.055
+  CI (99.9%): [7508.307, 10698.492] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:01:12
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                            Mode  Cnt     Score      Error  Units
+ReflectionFX.testdynamicBinding      avgt   10   240.012 ±    6.719  ns/op
+ReflectionFX.testinvoke              avgt   10   258.207 ±   46.321  ns/op
+ReflectionFX.testmethod              avgt   10  5545.928 ±   77.767  ns/op
+ReflectionFX.testmethodHandle        avgt   10   245.652 ±   29.802  ns/op
+ReflectionFX.testreflectionAccessor  avgt   10  9103.399 ± 1595.093  ns/op
