@@ -1,9 +1,11 @@
 package org.mve;
 
+import org.mve.invoke.MagicAccessor;
 import org.mve.invoke.MethodKind;
 import org.mve.invoke.PolymorphismFactory;
 import org.mve.invoke.ReflectionAccessor;
 import org.mve.invoke.ReflectionFactory;
+import org.mve.invoke.Unsafe;
 import org.openjdk.jmh.annotations.Benchmark;
 
 import java.lang.invoke.MethodHandle;
@@ -38,13 +40,13 @@ public class ReflectionFX
 	@Benchmark
 	public void testdynamicBinding()
 	{
-		SITE.a(1, 2);
+		SITE.test4(1, 2);
 	}
 
 	@Benchmark
 	public void testinvoke()
 	{
-		Test.a(1, 2);
+		Test.test5(1, 2);
 	}
 
 	static
@@ -52,22 +54,22 @@ public class ReflectionFX
 
 		try
 		{
-			METHOD = Test.class.getDeclaredMethod("a", int.class, double.class);
+			METHOD = Test.class.getDeclaredMethod("test1", int.class, double.class);
 			METHOD.setAccessible(true);
-			HANDLE = ReflectionFactory.TRUSTED_LOOKUP.findStatic(Test.class, "a", MethodType.methodType(String.class, int.class, double.class));
-			ACCESSOR = ReflectionFactory.access(Test.class, "a", MethodType.methodType(String.class, int.class, double.class), ReflectionFactory.KIND_INVOKE_STATIC);
+			HANDLE = Unsafe.TRUSTED_LOOKUP.findStatic(Test.class, "test2", MethodType.methodType(String.class, int.class, double.class));
+			ACCESSOR = ReflectionFactory.access(Test.class, "test3", MethodType.methodType(String.class, int.class, double.class), ReflectionFactory.KIND_INVOKE_STATIC);
 			SITE = new PolymorphismFactory<>(BindSite.class)
 				.method(
 					Test.class,
-					new MethodKind("a", String.class, int.class, double.class),
-					new MethodKind("a", String.class, int.class, double.class),
+					new MethodKind("test4", String.class, int.class, double.class),
+					new MethodKind("test4", String.class, int.class, double.class),
 					ReflectionFactory.KIND_INVOKE_STATIC
 				)
 				.allocate();
 		}
 		catch (Throwable t)
 		{
-			ReflectionFactory.ACCESSOR.throwException(t);
+			MagicAccessor.accessor.throwException(t);
 			throw new RuntimeException();
 		}
 	}

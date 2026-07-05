@@ -2,5 +2,5 @@ package org.mve;
 
 public interface BindSite
 {
-	String a(int a, double d);
+	String test4(int a, double d);
 }
